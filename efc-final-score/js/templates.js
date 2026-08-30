@@ -1,0 +1,108 @@
+/**
+ * Registry of the 10 score-card templates. Each entry is pure metadata —
+ * the actual markup for a template's `group` lives in components/scoreCard.js,
+ * and its thumbnail preview lives in components/templateThumb.js.
+ */
+export const TEMPLATES = [
+  {
+    id: 'classic',
+    name: 'Classic Broadcast',
+    blurb: 'Centered scoreboard, gold accents',
+    aspect: '4 / 5',
+    exportW: 1080,
+    exportH: 1350,
+    group: 'scoreboard',
+    skin: 'classic',
+  },
+  {
+    id: 'minimal',
+    name: 'Minimal Editorial',
+    blurb: 'Hairlines, generous whitespace',
+    aspect: '4 / 5',
+    exportW: 1080,
+    exportH: 1350,
+    group: 'scoreboard',
+    skin: 'minimal',
+  },
+  {
+    id: 'retro',
+    name: 'Retro Scoreline',
+    blurb: 'Vintage sports-page frame',
+    aspect: '4 / 5',
+    exportW: 1080,
+    exportH: 1350,
+    group: 'scoreboard',
+    skin: 'retro',
+  },
+  {
+    id: 'spotlight',
+    name: 'Gold Spotlight',
+    blurb: 'Dramatic vignette, top scorers only',
+    aspect: '4 / 5',
+    exportW: 1080,
+    exportH: 1350,
+    group: 'scoreboard',
+    skin: 'spotlight',
+    scorerLimit: 3,
+  },
+  {
+    id: 'podium',
+    name: 'MVP Podium',
+    blurb: 'Player of the match takes center stage',
+    aspect: '4 / 5',
+    exportW: 1080,
+    exportH: 1350,
+    group: 'scoreboard',
+    skin: 'podium',
+    mvpPosition: 'top',
+  },
+  {
+    id: 'square',
+    name: 'Square Post',
+    blurb: 'Compact 1:1, scorer chips',
+    aspect: '1 / 1',
+    exportW: 1080,
+    exportH: 1080,
+    group: 'square',
+  },
+  {
+    id: 'story',
+    name: 'Vertical Story',
+    blurb: 'Full-bleed 9:16 split halves',
+    aspect: '9 / 16',
+    exportW: 1080,
+    exportH: 1920,
+    group: 'story',
+  },
+  {
+    id: 'landscape',
+    name: 'Broadcast Ticker',
+    blurb: 'Widescreen lower-third style',
+    aspect: '16 / 9',
+    exportW: 1920,
+    exportH: 1080,
+    group: 'landscape',
+  },
+  {
+    id: 'bold',
+    name: 'Bold Split',
+    blurb: 'Diagonal color blocks',
+    aspect: '4 / 5',
+    exportW: 1080,
+    exportH: 1350,
+    group: 'bold',
+  },
+  {
+    id: 'ticket',
+    name: 'Match Ticket',
+    blurb: 'Stub-style tear line',
+    aspect: '4 / 5',
+    exportW: 1080,
+    exportH: 1350,
+    group: 'ticket',
+  },
+];
+
+export function getTemplate(id) {
+  return TEMPLATES.find((t) => t.id === id) || TEMPLATES[0];
+}
